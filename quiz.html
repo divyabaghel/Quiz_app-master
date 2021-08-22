@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Quiz</title>
+
+     <link rel="stylesheet" href="fonts/font-awesome.css">
+     <link rel="stylesheet" href="fonts/google-fonts.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <link rel="stylesheet" href="./styling/course-main.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+     <script src="js/jquery.js"></script>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
+          integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+          integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q=="
+          crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+          integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+          crossorigin="anonymous" />
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<style>
+     .body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #eef2f5;
+     }
+
+     .container {
+          position: relative;
+          width: 1100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 30px;
+
+     }
+
+     h1 {
+          text-align: center;
+          color: blue;
+          font-size: 70px;
+     }
+
+     .container .card {
+          position: relative;
+          max-width: 300px;
+          max-height: 500px;
+          background: rgb(240, 238, 238);
+          margin: 100px 10px;
+          padding: 20x 15px;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+          transition: 0.2s ease-in-out;
+     }
+
+     .container .card:hover {
+          max-height: 300px;
+     }
+
+     .container .card .img-box {
+          position: relative;
+          width: 250px;
+          height: 20px;
+          top: -60px;
+          left: 20px;
+          z-index: 1;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+     }
+
+     /* .container .card{
+          position: relative;
+          max-width: 300px;
+          height: 400px;
+     }  */
+
+
+     .container .card img {
+
+          max-width: 100%;
+
+          border-radius: 4px;
+     }
+
+     .container .card .content {
+          position: relative;
+          margin-top: -120px;
+          padding: 10px 15px;
+          text-align: center;
+          color: #111;
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.3s;
+
+
+     }
+
+
+     .container .card:hover .content {
+          visibility: visible;
+          opacity: 1;
+          margin-top: 100px;
+          transition-delay: 0.3s;
+
+     }
+
+     a {
+          text-decoration: none;
+
+     }
+
+
+     body {
+          font-family: 'Lato', sans-serif;
+
+     }
+
+     li {
+          list-style: none;
+     }
+
+     .footer-section {
+          width: 100%;
+          height: auto;
+          padding: 70px 0 20px 0;
+          background-color: #a3d0f0;
+          position: relative;
+          margin-top: 30px;
+          display: block;
+     }
+
+     .footer-section p {
+          color: rgb(87, 85, 85);
+          text-align: justify;
+          font-size: 20px;
+          line-height: 1.6;
+          font-weight: 400;
+
+     }
+
+     .footer-section li a {
+          font-size: 20px;
+          line-height: 1.6;
+          font-weight: 400;
+          color: rgb(87, 85, 85);
+          text-transform: capitalize;
+          text-decoration: none;
+          text-align: center;
+     }
+
+     .footer-section li a:hover {
+          font-size: 20px;
+          line-height: 1.6;
+          font-weight: 400;
+          color: black;
+          text-transform: capitalize;
+          text-decoration: none;
+          text-align: center;
+     }
+
+     .footer-section h3 {
+          text-transform: uppercase;
+          color: black;
+          margin-bottom: 25px;
+          font-size: 1.2rem !important;
+          font-weight: bold;
+          text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+     }
+
+     .head {
+          background-color: #a3d0f0;
+          width: 100%;
+          height: 13%;
+          font-size: 40px;
+          padding: 10px;
+          font-weight: bold;
+          text-align: center;
+     }
+</style>
+
+<body>
+     <div class="head">
+          <h2>WEB TECH</h2>
+      </div>
+  
+      <h1 class="heading">Quiz Section</h1>
+     <div class="container">
+          <div class="card">
+               <div class="img-box">
+                    <img src="./images/html2.jpg" alt="">
+
+               </div>
+               <div class="content">
+                    <h2>HTML</h2>
+                    <p>The hypertext markup language HTML was developed as a simple non-proprietary delivery format for
+                         global hypertext.</p>
+
+               </div>
+               <button> <a href="https://ayuu01.github.io/Quiz_app/index.html">Start Quiz</a> </button>
+          </div>
+          <div class="card">
+               <div class="img-box">
+                    <img src="./images/css.jpg" alt="">
+               </div>
+               <div class="content">
+                    <h2>CSS</h2>
+                    <p> CSS Stands for "Cascading Style Sheet." Cascading style sheets are used to format the layout of
+                         Web pages.</p>
+
+               </div>
+               <button> <a href="https://ayuu01.github.io/Quiz_app/index1.html">Start Quiz</a> </button>
+          </div>
+          <div class="card">
+               <div class="img-box">
+                    <img src="./images/boot.jpg" alt="">
+               </div>
+               <div class="content">
+                    <h2>Bootstrap</h2>
+                    <p>It is the most popular HTML, CSS and JavaScript framework for developing a responsive and mobile
+                         friendly website.</p>
+
+               </div>
+               <button> <a href="https://ayuu01.github.io/Quiz_app/index2.html">Start Quiz</a> </button>
+          </div>
+     </div>
+
+     <footer class="footer-section" id="footer-div">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-5 col-md-6 col-12 footer-div">
+                      <div>
+                          <h3>
+                              WEB TECH
+                          </h3>
+                          <p>Web Tech provide the best learning experience to the students and give them chance to expand
+                              their knowledge and learn new skills.</p>
+  
+                      </div>
+                  </div>
+                  <br>
+                  <div class="col-lg-2 col-md-4 col-12 footer-div">
+                      <div>
+                          <h3>
+                              Company
+                          </h3>
+                          <li><a href="#">HOME</a></li>
+                          <li><a href="#">Contact</a></li>
+                          <li><a href="#">Service</a></li>
+                          <li><a href="#">About</a></li>
+  
+  
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-6 col-12 footer-div">
+                      <div>
+                          <h3>
+                              Languages
+                          </h3>
+                          <li><a href="#">HTML</a></li>
+                          <li><a href="#">CSS</a></li>
+                          <li><a href="#">JavaScript</a></li>
+                          <li><a href="#">Reacts</a></li>
+  
+  
+                      </div>
+                  </div>
+                  <div class="col-lg-2 col-md-6 col-12 footer-div">
+                      <div>
+                          <h3>
+                              Learn
+                          </h3>
+                          <li><a href="#">Skills</a></li>
+                          <li><a href="#">Quizes</a></li>
+                          <li><a href="#">Video Lectures</a></li>
+                          <li><a href="#">Courses</a></li>
+  
+                      </div>
+                  </div>
+                  <!-- <div class="col-lg-3 col-md-6 col-12 footer-div">
+                <div>
+                    <h3>
+                       Learn
+                    </h3>
+                    <li><a href="#">Languages</a></li>
+                    <li><a href="#">CS Subjects</a></li>
+                    <li><a href="#">Video Lectures</a></li>
+                    <li><a href="#">Courses</a></li>
+                </div>
+            </div> -->
+              </div>
+  
+              <div class="mt-5 text-center">
+                  <p class="text-center">© Copyright WEB TECH 2021. All rights reserved
+  
+                  </p>
+              </div>
+  
+  
+          </div>
+      </footer>
+  
+      <!-- course section ends -->
+  
+      <!-- script part start  -->
+  
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+          AOS.init({
+              delay: 500
+          });
+      </script>
+  
+  
+</body>
+
+</html>
